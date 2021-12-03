@@ -10,7 +10,7 @@ pd.set_option('display.max_colwidth', 100)
 pd.set_option('display.max_columns', 100)
 
 
-DAILY_ZNN_REWARDS = [14_400, 8_640, 7_200, 10_080, 7_200, 5_760, 10_080, 5_760, 4_320, 10_080, 4_320, 4_320]
+DAILY_ZNN_REWARDS_PER_MONTH = [14_400, 8_640, 7_200, 10_080, 7_200, 5_760, 10_080, 5_760, 4_320, 10_080, 4_320, 4_320]
 DAYS_IN_MONTH = 30
 PILLAR_REWARDS = 0.5
 DELEGATION_REWARDS = 0.24
@@ -38,7 +38,7 @@ def __get_current_daily_znn_rewards():
         int: daily znn rewards
     """
     months_since_big_bang = math.floor(__days_since_alphanet()/DAYS_IN_MONTH)
-    return DAILY_ZNN_REWARDS[months_since_big_bang]
+    return DAILY_ZNN_REWARDS_PER_MONTH[months_since_big_bang]
     
 
 def calculate_expected_momentums(amount_of_pillars, days=2):
@@ -81,8 +81,8 @@ def calculate_expected_momentums(amount_of_pillars, days=2):
         lucky_indexes = df_pillars['pillar'].isin(lucky_pillars)
         df_pillars.loc[lucky_indexes, 'momentums'] = df_pillars.loc[lucky_indexes, 'momentums'] + 1
     
-    top_thirty_pillar_expected_momentums = int(df_pillars.loc[0:30, 'momentums'].mean()/days)
-    other_pillars_expected_momentums = int(df_pillars.loc[30:, 'momentums'].mean()/days)
+    top_thirty_pillar_expected_momentums = int(df_pillars.loc[0:30, 'momentums'].mean() / days)
+    other_pillars_expected_momentums = int(df_pillars.loc[30:, 'momentums'].mean() / days)
     
     return top_thirty_pillar_expected_momentums, other_pillars_expected_momentums
 
