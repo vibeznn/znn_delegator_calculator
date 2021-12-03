@@ -4,7 +4,8 @@ Script to calculate *estimated* delegator epoch returns for all Pillars, so you 
 You can find me on TG: @vibeznn  
 \
 If you'd like to donate for future scripts and data science projects on/around NoM please send to:  
-z1qpn04kmqdn9qyx45znwr2stnerqm8rg0y2vdm8 (NetworkofMomentum)  
+\
+z1qpn04kmqdn9qyx45znwr2stnerqm8rg0y2vdm8
 \
 Thanks!
 
