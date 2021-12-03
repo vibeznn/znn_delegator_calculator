@@ -12,11 +12,11 @@ Thanks!
 ## Usage
 You can run this script from an IDE or from commandline with "python3 delegator_calculator.py".
 *
-When you run this script it defaults to 100 znn delegation size, so the epochRewardsForMe columns is equal to **daily APR**. 
-You can edit the script to include the current pillar you're delegated to on line 176  with current_pillar = 'PILLAR NAME'.  
+When you run this script it defaults to 100 znn delegation size, so the epochRewardsForMe columns is equal to **daily APR**. You can change this balance by chaning my_balance variable in the script on line 176.
+You can also edit the script to include the current pillar you're delegated to on line 176  with variable current_pillar = 'PILLAR NAME'.  
 This way your own delegated weight isn't added to that pillar, as this would dilute the APR while you're already diluting it.  
 For all other pillars it adds your balance to the weight so that estimated returns are as accurate as possible.  
-You can also leave it empty, then your balance is added to all Pillars' weight. 
+You can also leave current_pillar variable empty, then your balance is added to all Pillars' weight. 
 
 
 ## Output
