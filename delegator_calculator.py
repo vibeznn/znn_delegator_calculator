@@ -167,6 +167,8 @@ def get_rewards_per_pillar(my_balance=100, current_pillar=''):
     df_rewards.rename({'giveMomentumRewardPercentage': 'MomentumReward%',
                        'giveDelegateRewardPercentage': 'DelegateReward%'}, axis=1, inplace=True)
     
+    df_rewards.to_csv('pillars_with_delegation_rewards.csv', index=False)
+    
     return df_rewards.sort_values(['epochRewardsForMe'], ascending=False).reset_index(drop=True)
 
 
